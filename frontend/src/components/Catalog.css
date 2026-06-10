@@ -1,0 +1,136 @@
+/* =========================================
+   SISTEMA DE FILTROS
+   ========================================= */
+.filters-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Para que en celulares no se aprieten los botones */
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ddd;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.filter-btn:hover {
+    border-color: #5c2542;
+    color: #5c2542;
+}
+
+.filter-btn.active {
+    background-color: #5c2542;
+    color: #fff;
+    border-color: #5c2542;
+}
+
+/* =========================================
+   GRILLA DEL CATÁLOGO
+   ========================================= */
+.catalog-grid {
+    display: grid;
+    /* Esto hace que sea responsive automáticamente sin media queries */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   TARJETA DE PRODUCTO (ProductCard)
+   ========================================= */
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.price {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #5c2542;
+    margin-bottom: 20px;
+}
+
+.buy-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    color: #5c2542;
+    border: 1px solid #5c2542;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #5c2542;
+    color: #ffffff;
+}
+
+/* =========================================
+   UTILIDADES (Mensaje de carga)
+   ========================================= */
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: #888;
+    font-style: italic;
+    margin: 50px 0;
+    font-size: 1.1rem;
+}

@@ -1,3 +1,6 @@
+/* =========================================
+   BASE Y RESETEO
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,28 +9,18 @@
 
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #fdfcfd; /* Fondo claro, limpio y suave */
-    color: #1a1a1a; /* Texto oscuro para máxima legibilidad */
+    background-color: #ffffff;
+    color: #1a1a1a;
 }
 
-/* Banner Superior */
-.promo-banner {
-    background-color: #5c2542; /* Color Mora/Berry Profundo */
-    color: #ffffff;
-    text-align: center;
-    padding: 12px;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-/* Navbar Limpio */
+/* =========================================
+   HEADER & NAVBAR
+   ========================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 50px;
+    padding: 20px 50px;
     background-color: #ffffff;
     border-bottom: 1px solid #eaeaea;
 }
@@ -46,58 +39,211 @@ body {
     text-transform: uppercase;
     color: #5c2542;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* Hero Section Femenino y Minimalista */
-.hero-section {
-    height: 55vh;
+/* Contenedor de tu banner de imagen personalizado */
+.custom-hero-banner {
+    width: 100%;
+    display: block;
+}
+
+/* =========================================
+   BARRA DE CONFIANZA (TRUST BADGES)
+   ========================================= */
+.trust-badges {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f9f9f9;
+    padding: 30px 20px;
+    border-bottom: 1px solid #eaeaea;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.badge {
+    text-align: center;
+    color: #333;
+    max-width: 200px;
+}
+
+.badge-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+    color: #5c2542; /* Acento del color de la marca */
+}
+
+.badge p {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   SECCIÓN PRINCIPAL: PRODUCTO (SCENT LAYERING)
+   ========================================= */
+.product-showcase {
+    display: flex;
+    max-width: 1200px;
+    margin: 60px auto;
+    gap: 50px;
+    padding: 0 20px;
+}
+
+.product-gallery {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+.main-product-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.video-container {
+    display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.85)), 
-                url('https://images.unsplash.com/photo-1518002171953-a080ee817e1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-    border-bottom: 1px solid #eaeaea;
-    padding: 20px;
+    margin-top: 10px;
 }
 
-.hero-section h1 {
-    font-size: 3.5rem;
+.product-details {
+    flex: 1;
+}
+
+.product-details h1 {
+    font-size: 2.5rem;
     font-weight: 300;
-    letter-spacing: 6px;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    color: #5c2542; /* Tono de la mora como protagonista */
+    margin-bottom: 5px;
 }
 
-.hero-section p {
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
     font-size: 1.1rem;
-    color: #555555;
-    margin-bottom: 2.5rem;
-    max-width: 600px;
 }
 
-.cta-button {
-    padding: 14px 45px;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background-color: #5c2542;
+.price-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1.2rem;
+}
+
+.new-price {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.discount-tag {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* Selector de Fragancias */
+.fragrance-selector h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.selector-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.fragrance-btn {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.fragrance-btn.active {
+    border-color: #000;
+    background: #000;
+    color: #fff;
+}
+
+.notes-desc {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.urgency-counter {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 12px;
+    border-radius: 4px;
+    margin: 25px 0;
+    font-size: 0.95rem;
+}
+
+.buy-button {
+    width: 100%;
+    padding: 18px;
+    background-color: #000;
     color: #fff;
     border: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-.cta-button:hover {
-    background-color: #421a2f;
+.buy-button:hover {
+    background-color: #333;
 }
 
-/* Grilla del Catálogo */
-main {
-    padding: 4rem 2rem;
-    background-color: #fdfcfd;
+.buy-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.verified-reviews {
+    background: #f9f9f9;
+    padding: 20px;
+    border-left: 4px solid #4CAF50;
+    border-radius: 4px;
+}
+
+.review-text {
+    font-style: italic;
+    color: #555;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   EMBAJADORAS (UGC / TIKTOK)
+   ========================================= */
+.social-proof-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #eaeaea;
 }
 
 .section-title {
@@ -105,119 +251,132 @@ main {
     font-size: 2rem;
     font-weight: 300;
     letter-spacing: 3px;
-    margin-bottom: 3.5rem;
+    margin-bottom: 15px;
     text-transform: uppercase;
     color: #1a1a1a;
 }
 
-.catalog-grid {
+.social-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+.social-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Tarjetas Limpias de Producto */
-.product-card {
-    background-color: #ffffff;
-    border: 1px solid #eee;
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow 0.3s ease;
+.social-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px; /* Bordes más redondeados para simular celular */
+    cursor: pointer;
 }
 
-.product-card:hover {
-    box-shadow: 0 10px 20px rgba(92, 37, 66, 0.05);
-}
-
-.product-card img {
+.social-card img {
     width: 100%;
-    height: 340px;
+    height: 400px;
     object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-.product-info {
-    padding: 1.5rem;
-    text-align: center;
-    flex-grow: 1;
+.social-card:hover img {
+    transform: scale(1.05);
+}
+
+.social-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   PREGUNTAS FRECUENTES (FAQ / SEO)
+   ========================================= */
+.faq-section {
+    padding: 80px 20px;
+    background-color: #fafafa;
+    border-top: 1px solid #eaeaea;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 40px auto 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 20px;
 }
 
-.product-info h3 {
+.faq-item {
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+}
+
+.faq-item h4 {
+    margin-bottom: 12px;
     font-size: 1.1rem;
-    font-weight: 400;
     color: #1a1a1a;
-    margin-bottom: 0.6rem;
 }
 
-.product-info p {
-    font-size: 0.88rem;
-    color: #666666;
-    margin-bottom: 1.2rem;
-    line-height: 1.4;
-}
-
-.price {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    color: #5c2542;
-}
-
-.buy-button {
-    width: 100%;
-    padding: 12px 0;
-    background-color: #ffffff;
-    color: #5c2542;
-    border: 1px solid #5c2542;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: Record 0.3s;
-}
-
-.buy-button:hover {
-    background-color: #5c2542;
-    color: #ffffff;
-}
-
-/* Filtros Estilizados */
-.filters-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 45px;
-}
-
-.filter-btn {
-    background-color: transparent;
+.faq-item p {
     color: #666;
-    border: 1px solid #ddd;
-    padding: 9px 22px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.2s;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+/*ACA ESTILO DE BUTTON EJEMPLO*/
+.faq-item a {
+    display: inline-block;
+    margin-top: 16px;
+    text-decoration: none;
 }
 
-.filter-btn:hover, .filter-btn.active {
-    background-color: #5c2542;
+.faq-item a button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #808080 0%, #9f537c 100%);
     color: #fff;
-    border-color: #5c2542;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(92, 37, 66, 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
-/* Sidebar del Carrito */
+.faq-item a button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(92, 37, 66, 0.28);
+    opacity: 0.95;
+}
+
+.faq-item a button:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 18px rgba(92, 37, 66, 0.2);
+}
+
+/* =========================================
+   CARRITO DE COMPRAS (SIDEBAR)
+   ========================================= */
 .cart-sidebar {
     position: fixed;
     top: 0;
     right: 0;
-    width: 380px;
+    width: 400px;
     height: 100vh;
     background-color: #ffffff;
     border-left: 1px solid #eaeaea;
@@ -246,13 +405,28 @@ main {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
 }
 
 .cart-sidebar-content {
     flex-grow: 1;
     padding: 25px;
     overflow-y: auto;
+}
+
+.empty-cart-msg {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    margin-top: 40px;
 }
 
 .cart-item {
@@ -264,9 +438,22 @@ main {
 }
 
 .cart-item img {
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
+    border-radius: 4px;
+}
+
+.cart-item-info h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.cart-item-info p {
+    font-size: 0.95rem;
+    color: #5c2542;
+    font-weight: bold;
 }
 
 .cart-sidebar-footer {
@@ -277,16 +464,41 @@ main {
 
 .checkout-btn {
     width: 100%;
-    padding: 15px;
-    background-color: #5c2542;
-    color: #ffffff;
+    padding: 18px;
     border: none;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-.checkout-btn:hover {
-    background-color: #421a2f;
+.mp-btn {
+    background-color: #009ee3; /* Color oficial Mercado Pago */
+    color: white;
+}
+
+.mp-btn:hover {
+    background-color: #0080b7;
+}
+
+/* =========================================
+   RESPONSIVE (MÓVILES)
+   ========================================= */
+@media (max-width: 768px) {
+    .product-showcase {
+        flex-direction: column;
+        gap: 30px;
+        margin: 30px auto;
+    }
+    .cart-sidebar {
+        width: 100vw;
+    }
+    .navbar {
+        padding: 15px 20px;
+    }
+    .navbar .logo {
+        font-size: 1.1rem;
+    }
 }
