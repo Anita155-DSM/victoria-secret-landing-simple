@@ -7,8 +7,9 @@ const ProductCard = ({ product, onAddToCart }) => {
             <div className="product-info">
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
-                <span className="price">${product.price.toFixed(2)}</span>
-                
+                <span className="price">
+                    ${product.price.toLocaleString('es-AR', { minimumFractionDigits: 2 })}
+                </span>
                 {/* Botón conectado a la función principal */}
                 <button onClick={onAddToCart} className="buy-button">
                     Añadir al Carrito

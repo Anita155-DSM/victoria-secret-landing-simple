@@ -5,16 +5,12 @@ import './LandingPage.css';
 
 const LandingPage = () => {
     const catalogRef = useRef(null);
-    
-    // 1. Inicializar el carrito desde localStorage para que no se borre al refrescar
     const [cart, setCart] = useState(() => {
         const savedCart = localStorage.getItem('vs_cart');
         return savedCart ? JSON.parse(savedCart) : [];
     });
-    
-    const [isCartOpen, setIsCartOpen] = useState(false); // Control del modal lateral
+    const [isCartOpen, setIsCartOpen] = useState(false);
 
-    // 2. Guardar en localStorage cada vez que el carrito cambie
     useEffect(() => {
         localStorage.setItem('vs_cart', JSON.stringify(cart));
     }, [cart]);
@@ -23,7 +19,6 @@ const LandingPage = () => {
         catalogRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
-    // Agregar producto o incrementar cantidad
     const handleAddToCart = (product) => {
         setCart(prevCart => {
             const itemExists = prevCart.find(item => item._id === product._id);
@@ -34,15 +29,10 @@ const LandingPage = () => {
             }
             return [...prevCart, { ...product, quantity: 1 }];
         });
-
-        // Evento analítico automático
-        console.log(`[Analytics] add_to_cart: ${product.name} | Precio: $${product.price}`);
-        
-        // En lugar de un alert molesto, abrimos suavemente el carrito para mostrar la UX
+        console.log(`[Google Analytics] Evento: add_to_cart | Producto: ${product.name}`);
         setIsCartOpen(true);
     };
 
-    // Eliminar o decrementar producto del carrito
     const handleRemoveFromCart = (productId) => {
         setCart(prevCart => {
             const item = prevCart.find(i => i._id === productId);
@@ -53,66 +43,61 @@ const LandingPage = () => {
         });
     };
 
-    // Calcular el precio total
     const calculateTotal = () => {
         return cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
     };
 
-    // Simulación del Checkout final (Conversión del embudo)
     const handleCheckout = () => {
-        console.log(`[Google Analytics] Evento: purchase | Total Facturado: $${calculateTotal()}`);
-        console.log(`[Meta Pixel] Evento: Purchase | Items:`, cart);
-        alert('¡Compra simulada con éxito! Eventos de conversión enviados a las herramientas de analítica.');
-        setCart([]); // Vaciar carrito
+        console.log(`[Google Analytics] Evento: purchase | Total: $${calculateTotal()} ARS`);
+        alert('¡Compra procesada! Eventos de conversión enviados.');
+        setCart([]);
         setIsCartOpen(false);
     };
 
-    // Cantidad total de items para la burbuja del navbar
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
     return (
-        <div className="landing-container bg-dark text-light">
+        <div className="landing-container bberry-theme">
             <Helmet>
-                <title>Midnight Elegance | Victoria's Secret Exclusivo</title>
-                <meta name="description" content="Descubrí Midnight Elegance, la nueva colección de edición limitada." />
+                <title>Midnight Berry Exclusivo | Victoria's Secret Argentina</title>
+                <meta name="description" content="Descubrí la nueva línea Midnight Berry de Victoria's Secret. Notas de mora roja y jabuticaba en una estética limpia y femenina." />
+                <meta name="keywords" content="Midnight Berry, Victoria's Secret Argentina, body splash mora roja, jabuticaba cosmética" />
             </Helmet>
 
             <div className="promo-banner">
-                <span>🔥 ENVÍO GRATIS + 15% OFF USANDO EL CÓDIGO <strong>MIDNIGHT15</strong> 🔥</span>
+                <span>✨ LANZAMIENTO EXCLUSIVO: 15% OFF EN TU PRIMER PEDIDO CON EL CÓDIGO <strong>BERRY15</strong> ✨</span>
             </div>
 
             <nav className="navbar">
                 <div className="logo">VICTORIA'S SECRET</div>
                 <div className="cart-icon" onClick={() => setIsCartOpen(true)}>
-                    🛍️ Carrito <span className="cart-badge">{totalItems}</span>
+                    🛍️ Bolsa ({totalItems})
                 </div>
             </nav>
 
             <header className="hero-section">
-                <h1>Midnight Elegance</h1>
-                <p>La sofisticación de la noche, ahora en edición limitada.</p>
+                <h1>Midnight Berry</h1>
+                <p>La dulzura de la mora roja se fusiona con la intensidad de la jabuticaba.</p>
                 <button className="cta-button" onClick={scrollToCatalog}>
-                    Ver Colección
+                    Explorar Línea
                 </button>
             </header>
 
             <main ref={catalogRef}>
-                <h2 className="text-center mt-5">Catálogo Exclusivo</h2>
+                <h2 className="section-title">Colección Midnight Berry</h2>
                 <Catalog onAddToCart={handleAddToCart} />
             </main>
 
-            {/* --- MODAL / SIDEBAR DESPLEGABLE DEL CARRITO --- */}
             {isCartOpen && <div className="cart-overlay" onClick={() => setIsCartOpen(false)}></div>}
             
             <div className={`cart-sidebar ${isCartOpen ? 'open' : ''}`}>
                 <div className="cart-sidebar-header">
-                    <h3>Tu Carrito</h3>
+                    <h3>Tu Bolsa</h3>
                     <button className="close-btn" onClick={() => setIsCartOpen(false)}>✕</button>
                 </div>
-
                 <div className="cart-sidebar-content">
                     {cart.length === 0 ? (
-                        <p className="empty-cart-msg">El carrito está vacío de elegancia.</p>
+                        <p className="empty-cart-msg">Tu bolsa está vacía.</p>
                     ) : (
                         cart.map(item => (
                             <div key={item._id} className="cart-item">
@@ -121,14 +106,13 @@ const LandingPage = () => {
                                     <h4>{item.name}</h4>
                                     <p>${item.price.toFixed(2)} x {item.quantity}</p>
                                     <button className="remove-item-btn" onClick={() => handleRemoveFromCart(item._id)}>
-                                        Eliminar uno
+                                        Quitar
                                     </button>
                                 </div>
                             </div>
                         ))
                     )}
                 </div>
-
                 {cart.length > 0 && (
                     <div className="cart-sidebar-footer">
                         <div className="cart-total">
@@ -136,7 +120,7 @@ const LandingPage = () => {
                             <span>${calculateTotal()}</span>
                         </div>
                         <button className="checkout-btn" onClick={handleCheckout}>
-                            Finalizar Compra (Checkout)
+                            Finalizar Compra
                         </button>
                     </div>
                 )}
