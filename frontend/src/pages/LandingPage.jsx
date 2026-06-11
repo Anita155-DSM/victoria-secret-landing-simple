@@ -246,7 +246,7 @@ const LandingPage = () => {
           </div>
 
           <div className="product-details">
-            <h1>El Combo Perfecto</h1>
+            <h1 className="title">El Combo Perfecto</h1>
             <p className="subtitle">
               Crema Corporal Hidratante (236ml) + Fragrance Mist (250ml)
             </p>
