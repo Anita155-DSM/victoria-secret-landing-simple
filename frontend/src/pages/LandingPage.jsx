@@ -30,7 +30,7 @@ const LandingPage = () => {
 
   // 3. Traer los datos de la Base de Datos al cargar la página
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch("https://victoria-secret-landing-simple.onrender.com/api/products")
       .then((res) => res.json())
       .then((data) => {
         // Filtramos solo los combos por si tenés otros productos
