@@ -150,7 +150,7 @@ body {
 }
 
 .discount-tag {
-    background-color: #000;
+    background-color: #000000;
     color: #fff;
     padding: 5px 10px;
     font-size: 0.8rem;
@@ -191,8 +191,8 @@ body {
 }
 
 .urgency-counter {
-    background-color: #fff3cd;
-    color: #856404;
+    background-color: #fff4fa;
+    color: #000000;
     padding: 12px;
     border-radius: 4px;
     margin: 25px 0;
@@ -456,6 +456,44 @@ body {
     font-weight: bold;
 }
 
+.remove-item-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border: 1px solid #f2c7d8;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #fff 0%, #fff6fa 100%);
+    color: #c2185b;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(194, 24, 91, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.remove-item-btn:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, #fff 0%, #ffeef5 100%);
+    color: #a7164e;
+    box-shadow: 0 10px 22px rgba(194, 24, 91, 0.14);
+}
+
+.remove-item-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(194, 24, 91, 0.1);
+}
+
+.remove-item-btn:focus-visible {
+    outline: 2px solid #c2185b;
+    outline-offset: 2px;
+}
+
+.remove-item-btn i {
+    font-size: 0.95rem;
+}
+
 .cart-sidebar-footer {
     padding: 25px;
     border-top: 1px solid #eaeaea;
@@ -501,4 +539,47 @@ body {
     .navbar .logo {
         font-size: 1.1rem;
     }
+}
+
+/*VIDEOS DE TIKTOK*/
+
+.video-overlay {
+    pointer-events: none; /* Deja hacer clic en el video de abajo */
+    z-index: 10;
+}
+
+.video-card {
+    position: relative;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 580px; /* Aumentamos la altura a la medida ideal de TikTok */
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Corta de raíz cualquier intento de hacer scroll interno */
+}
+
+/* 1. Al contenedor principal le damos flex layout */
+.landing-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. El main contiene el contenido */
+main {
+    padding-top: 80px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
 }

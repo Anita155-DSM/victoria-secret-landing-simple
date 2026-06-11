@@ -1,0 +1,112 @@
+.site-footer {
+    margin-top: 0;
+    background: linear-gradient(180deg, #faf7f9 0%, #f3eef2 100%);
+    border-top: 1px solid #e7dfe4;
+    color: #1a1a1a;
+    flex-shrink: 0;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 20px 36px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 32px;
+}
+
+.footer-logo {
+    font-size: 1.3rem;
+    letter-spacing: 4px;
+    font-weight: 300;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.footer-brand p {
+    color: #666;
+    line-height: 1.7;
+    max-width: 320px;
+}
+
+.footer-column h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    color: #5c2542;
+}
+
+.footer-column p,
+.footer-column a {
+    display: block;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.8;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: #5c2542;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.footer-social a {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dbcbd3;
+    border-radius: 50%;
+    color: #5c2542;
+    background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-social a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(92, 37, 66, 0.12);
+    background-color: #fff8fb;
+}
+
+.footer-social i {
+    font-size: 1.05rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #e7dfe4;
+    padding: 18px 20px 24px;
+    text-align: center;
+    color: #7a6d74;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .site-footer {
+        margin-top: 60px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-top: 36px;
+    }
+
+    .footer-bottom {
+        padding-top: 16px;
+    }
+}

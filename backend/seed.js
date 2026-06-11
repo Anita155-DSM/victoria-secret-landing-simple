@@ -10,7 +10,7 @@ const seedProducts = [
         price: 52000, 
         stock: 40, 
         category: "Combos", 
-        imageUrl: "/barevanilla.jpg" // Ruta directa a tu carpeta public
+        imageUrl: "/barevanilla.jpg" 
     },
     { 
         name: "Combo Perfecto: Velvet Petals", 
@@ -51,6 +51,39 @@ const seedProducts = [
         stock: 20, 
         category: "Combos", 
         imageUrl: "/aquakiss.jpg" 
+    },
+    // --- NUEVOS COMBOS AGREGADOS ---
+    { 
+        name: "Combo Perfecto: Midnight Bloom", 
+        description: "Kit de Scent Layering: Fragrance Mist (250ml) + Hydrating Body Lotion (236ml). Notas de flor de luna y maderas cremosas.", 
+        price: 52000, 
+        stock: 30, 
+        category: "Combos", 
+        imageUrl: "/midnightbloom.jpg" 
+    },
+    { 
+        name: "Combo Perfecto: Romantic", 
+        description: "Kit de Scent Layering: Fragrance Mist (250ml) + Hydrating Body Lotion (236ml). Notas de pétalos rosados y almizcle solar.", 
+        price: 52000, 
+        stock: 35, 
+        category: "Combos", 
+        imageUrl: "/romantic.jpg" 
+    },
+    { 
+        name: "Combo Perfecto: Rush", 
+        description: "Kit de Scent Layering: Fragrance Mist (250ml) + Hydrating Body Lotion (236ml). Notas de maderas jugosas y mandarina brillante.", 
+        price: 52000, 
+        stock: 25, 
+        category: "Combos", 
+        imageUrl: "/rush.jpg" 
+    },
+    { 
+        name: "Combo Perfecto: Temptation", 
+        description: "Kit de Scent Layering: Fragrance Mist (250ml) + Hydrating Body Lotion (236ml). Notas de manzana deliciosa y flor de cactus fresca.", 
+        price: 52000, 
+        stock: 40, 
+        category: "Combos", 
+        imageUrl: "/temptation.jpg" 
     }
 ];
 
