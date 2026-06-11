@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import Product from './models/Product.js'; 
 
-mongoose.connect('mongodb://localhost:27017/victorias_secret_campaign');
+mongoose.connect('mongodb+srv://anahiperez:46610210@myclaster.zlqok0i.mongodb.net/victoriassecret?retryWrites=true&w=majority');
 
 const seedProducts = [
     { 
