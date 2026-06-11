@@ -175,7 +175,7 @@ const LandingPage = () => {
             {/* Banner Publicitario */}
             <div className="custom-hero-banner">
                 <img
-                    src="/Banner Ofertas Imperdibles Calzado Collage Gris Oscuro y Rosa (1000 x 400 mm) (1000 x 100 mm).png"
+                    src="/Banner.webp"
                     alt="15% OFF + Envío Gratis"
                     style={{ width: "100%", height: "auto", display: "block" }}
                 />
@@ -454,6 +454,7 @@ const LandingPage = () => {
                     </div>
                 )}
             </div>
+            
         </div>
     );
 };
