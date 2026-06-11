@@ -163,7 +163,7 @@ const LandingPage = () => {
   return (
     <div className="landing-container">
       <Helmet>
-        <title id="title">El Combo Perfecto | Scent Layering Victoria's Secret</title>
+        <title className="title">El Combo Perfecto | Scent Layering Victoria's Secret</title>
         <meta
           name="description"
           content="Maximizá la duración de tu fragancia con el Combo Perfecto de Victoria's Secret. Llevá crema + body splash con 15% OFF."
