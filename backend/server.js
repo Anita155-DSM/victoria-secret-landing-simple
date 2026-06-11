@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // Conexión a MongoDB (Asegurate de tener tu URI)
-mongoose.connect('mongodb://localhost:27017/victorias_secret_campaign');
+mongoose.connect('mongodb+srv://anahiperez:46610210@myclaster.zlqok0i.mongodb.net/victoriassecret?retryWrites=true&w=majority');
 
 // Endpoint para obtener el catálogo dinámico
 app.get('/api/products', async (req, res) => {
