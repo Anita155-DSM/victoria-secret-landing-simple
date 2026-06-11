@@ -576,10 +576,12 @@ main {
 html, body {
     height: 100%;
     margin: 0;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
 
 #root {
     display: flex;
     flex-direction: column;
+    color-scheme: light;
 }
